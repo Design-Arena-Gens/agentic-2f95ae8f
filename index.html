@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="calculator">
+      <section class="display">
+        <div id="modeToggle" role="button" tabindex="0" aria-label="Toggle angle unit">
+          <span id="modeLabel">RAD</span>
+        </div>
+        <div class="expression" id="expressionDisplay"></div>
+        <div class="result" id="resultDisplay">0</div>
+      </section>
+      <section class="keypad">
+        <div class="column">
+          <button data-action="clear">AC</button>
+          <button data-action="delete">DEL</button>
+          <button data-value="(">(</button>
+          <button data-value=")">)</button>
+          <button data-value="pi">π</button>
+          <button data-value="e">e</button>
+        </div>
+        <div class="column">
+          <button data-func="sin">sin</button>
+          <button data-func="cos">cos</button>
+          <button data-func="tan">tan</button>
+          <button data-func="asin">asin</button>
+          <button data-func="acos">acos</button>
+          <button data-func="atan">atan</button>
+        </div>
+        <div class="column">
+          <button data-func="log">log</button>
+          <button data-func="ln">ln</button>
+          <button data-func="sqrt">√</button>
+          <button data-func="cbrt">∛</button>
+          <button data-func="exp">exp</button>
+          <button data-func="abs">abs</button>
+        </div>
+        <div class="column">
+          <button data-func="fact">x!</button>
+          <button data-value="^">^</button>
+          <button data-value="%">%</button>
+          <button data-value="//">//</button>
+          <button data-value="+">+</button>
+          <button data-value="-">−</button>
+        </div>
+        <div class="column">
+          <button data-value="7">7</button>
+          <button data-value="8">8</button>
+          <button data-value="9">9</button>
+          <button data-value="4">4</button>
+          <button data-value="5">5</button>
+          <button data-value="6">6</button>
+        </div>
+        <div class="column">
+          <button data-value="*">×</button>
+          <button data-value="/">÷</button>
+          <button data-value="1">1</button>
+          <button data-value="2">2</button>
+          <button data-value="3">3</button>
+          <button data-value="0">0</button>
+        </div>
+        <div class="column">
+          <button data-value=".">.</button>
+          <button data-func="deg">deg( )</button>
+          <button data-func="rad">rad( )</button>
+          <button data-action="ans">ANS</button>
+          <button class="equals" data-action="equals">=</button>
+        </div>
+      </section>
+      <section class="history" aria-live="polite">
+        <h2>History</h2>
+        <ul id="historyList"></ul>
+      </section>
+    </main>
+    <template id="historyItemTemplate">
+      <li>
+        <div class="history-expression"></div>
+        <div class="history-result"></div>
+      </li>
+    </template>
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>
